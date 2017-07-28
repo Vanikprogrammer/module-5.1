@@ -1,21 +1,21 @@
-package Star;
+package star;
 
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Line;
 
-public class DrawStar {
+public class Star {
     private int yCoordinate;
     private int xCoordinate;
     private int radius;
     private double insideRadius;
     private int countAngle;
 
-    public DrawStar(int xCoordinate, int yCoordinate, int radius, int countAngle) {
+    public Star(int xCoordinate, int yCoordinate, int radius) {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = Main.HEIGHT_SCREEN - yCoordinate;
         this.radius = radius;
         this.insideRadius = radius / 2.63;
-        this.countAngle = countAngle;
+        this.countAngle = 5;
     }
 
     public Line[] drawStar() {
