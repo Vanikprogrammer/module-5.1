@@ -20,15 +20,18 @@ import javafx.scene.paint.Color;
 public class Snowman1 {
     private double minRad;
     private double maxRad;
+    private int count;
     private double centY = Main.WIDTH_SCREEN;
 
-    public Snowman1(double minRad,double maxRad){
+    private Circle[]circle;
+    public Snowman1(double minRad,double maxRad, int count){
         this.minRad = minRad;
         this.maxRad = maxRad;
+        this.count = count;
     }
 
-    public Circle[] generateMan(int count){
-        Circle circle[] = new Circle[count+3];
+    public Circle[] generateMan(){
+        circle = new Circle[count+3];
         Random random = new Random();
 
         for(int i = 0; i < circle.length; i++){
@@ -55,5 +58,9 @@ public class Snowman1 {
                         circle[circle.length - 4].getRadius()/4,color);
             }
         }return circle;
+    }
+    public void paintRed(){
+        for(int i = 0; i < circle.length; i++)
+            circle[i].setFill(Color.RED);
     }
 }
